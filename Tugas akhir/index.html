@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VinnoStore - E-Commerce & Showroom Mobil</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="brand-logo">
+                <i class="fa-solid => fa-car-side"></i> Vinno<span>Store</span>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Beranda</a>
+                <a href="#catalog" class="nav-link">Katalog Mobil</a>
+                <a href="#features" class="nav-link">Keunggulan</a>
+                <a href="#contact" class="nav-link">Kontak</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn-icon" id="cartBtn" aria-label="Keranjang">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge" id="cartBadge">0</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="tagline"><i class="fa-solid fa-star"></i> Showroom Mobil Impian</span>
+                <h1>Temukan Mobil Impian Anda Dengan Mudah & Cepat</h1>
+                <p>Jelajahi koleksi mobil terbaik, mulai dari EV futuristik seperti Ioniq 5 hingga SUV tangguh dengan harga & spesifikasi paling transparan.</p>
+                <div class="hero-buttons">
+                    <a href="#catalog" class="btn btn-primary">Lihat Katalog <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-outline">Konsultasi Gratis</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80" alt="Hyundai Ioniq 5 Showroom" id="heroCarImg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Filter Section -->
+    <section class="catalog-section" id="catalog">
+        <div class="container">
+            <div class="section-title">
+                <h2>Katalog Mobil Terbaru</h2>
+                <p>Data mobil terintegrasi secara langsung melalui Endpoint API Resmi BTNG</p>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="filter-bar">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Cari nama mobil (misal: Ioniq 5, HRV, Civic)...">
+                </div>
+                <div class="filter-group">
+                    <select id="brandFilter">
+                        <option value="all">Semua Merek</option>
+                    </select>
+                    <select id="sortFilter">
+                        <option value="default">Urutkan Status</option>
+                        <option value="price-asc">Harga: Rendah ke Tinggi</option>
+                        <option value="price-desc">Harga: Tinggi ke Rendah</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Car Cards Grid -->
+            <div class="car-grid" id="carGrid">
+                <!-- Loader State -->
+                <div class="loading-spinner" id="loadingState">
+                    <div class="spinner"></div>
+                    <p>Mengambil data mobil dari API...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mengapa Memilih VinnoStore?</h2>
+                <p>Layanan showroom terpercaya dengan jaminan mutu terbaik</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Garansi Resmi</h3>
+                    <p>Setiap unit kendaraan memiliki jaminan garansi mesin & garansi resmi dari APM.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Proses Cepat</h3>
+                    <p>Pengajuan pengiriman & inspeksi kendaraan instan dan diproses pada hari yang sama.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    <h3>Harga Transparan</h3>
+                    <p>Tidak ada biaya tersembunyi, semua data rincian sesuai dengan respon API resmi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>AutoPrime Showroom</h3>
+                <p>Website E-Commerce & Showroom Mobil Tugas Akhir BTNG Kelas Frontend.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Link Cepat</h4>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#catalog">Katalog</a></li>
+                    <li><a href="#features">Keunggulan</a></li>
+                </ul>
+            </div>
+            <div class="footer-info">
+                <h4>API Endpoint</h4>
+                <p><code>https://api-web.dnccudinus.org/api/mobil</code></p>
+                <p>&copy; 2026 AutoPrime BTNG Frontend. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Detail Modal -->
+    <div class="modal-overlay" id="detailModal">
+        <div class="modal-card">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Content injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
